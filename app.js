@@ -12,7 +12,6 @@ function slideValue(newVal) {
         const cell = document.createElement('div');
         cell.classList.add('cell');
         grid.appendChild(cell);
-        console.log(`${i} time.`);
     
         cell.addEventListener('click', () => {
             cell.classList.add('black');

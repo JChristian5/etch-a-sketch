@@ -1,14 +1,23 @@
 const grid = document.querySelector('.container');
 
-let size = prompt('How big of grid');
+let slideText = document.querySelector('.slidetext');
 
-for(let i = 0; i < size; i++) {
-    const cell = document.createElement('div');
-    cell.classList.add('cell');
-    grid.appendChild(cell);
-    console.log(`${i} time.`);
+function slideValue(newVal) {
+    grid.innerHTML = '';
+    let size = document.getElementById('slider').value;
+    let boxes = size * size;
+    grid.style.gridTemplateColumns = `repeat(${size}, 1fr)`;
 
-    cell.addEventListener('click', () => {
-        cell.classList.add('black');
-    });
+    for(let i = 0; i < boxes; i++) {
+        const cell = document.createElement('div');
+        cell.classList.add('cell');
+        grid.appendChild(cell);
+        console.log(`${i} time.`);
+    
+        cell.addEventListener('click', () => {
+            cell.classList.add('black');
+        });
+    }
+
+    slideText.textContent = `${size} x ${size}`;
 }

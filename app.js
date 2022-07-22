@@ -1,6 +1,11 @@
 const grid = document.querySelector('.container');
 
 let slideText = document.querySelector('.slidetext');
+
+let drawButton = document.getElementById('draw');
+let eraseButton = document.getElementById('erase');
+let rainbowButton = document.getElementById('rainbow');
+
 // This allows grid to automatically be created once the application is open
 let startBoxes = 256;
 grid.style.gridTemplateColumns = "repeat(16, 1fr)";

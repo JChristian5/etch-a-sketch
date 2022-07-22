@@ -19,3 +19,11 @@
 .black {
     background-color: #222222;
 }
+
+.active {
+    background-color: blue;
+}
+
+.inactive {
+    background-color: red;
+}

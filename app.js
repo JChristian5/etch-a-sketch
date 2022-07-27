@@ -16,9 +16,6 @@ eraseButton.addEventListener('click', () => {
     rainbowButton.value = "inactive";
     rainbowButton.classList.add('inactive');
     rainbowButton.classList.remove('active');
-    console.log(eraseButton);
-    console.log(drawButton);
-    console.log(rainbowButton);
 });
 
 rainbowButton.addEventListener('click', () => {
@@ -31,9 +28,6 @@ rainbowButton.addEventListener('click', () => {
     rainbowButton.value = "active";
     rainbowButton.classList.add('active');
     rainbowButton.classList.remove('inactive');
-    console.log(eraseButton);
-    console.log(drawButton);
-    console.log(rainbowButton);
 });
 
 drawButton.addEventListener('click', () => {
@@ -46,9 +40,6 @@ drawButton.addEventListener('click', () => {
     rainbowButton.value = "inactive";
     rainbowButton.classList.add('inactive');
     rainbowButton.classList.remove('active');
-    console.log(eraseButton);
-    console.log(drawButton);
-    console.log(rainbowButton);
 });
 
 // This allows grid to automatically be created once the application is open
@@ -59,9 +50,22 @@ for(let i = 0; i < startBoxes; i++) {
     cell.classList.add('cell');
     grid.appendChild(cell);
 
-    cell.addEventListener('click', () => {
-        cell.classList.add('black');
-    });
+    // function blackCell() {
+    //     cell.classList.add('black');
+    // }
+
+    // function whiteCell() {
+    //     cell.classList.remove('black');
+    // }
+    cell.addEventListener('click', colorChange);
+    
+    // if(drawButton.value === "active" && eraseButton.value === "inactive") {
+    //     cell.addEventListener('click', blackCell);
+    // } else if(eraseButton.value === "active" && drawButton.value === "inactive") {
+    //     cell.removeEventListener('click', blackCell);
+    //     cell.addEventListener('click', whiteCell);
+    // }
+    
 }
 
 // Once the slider value in HTML is switched, this function changes grid size and allows
@@ -77,10 +81,21 @@ function slideValue(newVal) {
         cell.classList.add('cell');
         grid.appendChild(cell);
     
-        cell.addEventListener('click', () => {
-            cell.classList.add('black');
-        });
+        cell.addEventListener('click', colorChange);
     }
 
     slideText.textContent = `${size} x ${size}`;
+}
+
+function colorChange(e) {
+    if(eraseButton.value === 'active') {
+        e.target.style.backgroundColor = '#F5F5F5';
+    } else if(drawButton.value === 'active') {
+        e.target.style.backgroundColor = '#222222';
+    } else if(rainbowButton.value === 'active') {
+        const r = Math.floor(Math.random() * 256);
+        const g = Math.floor(Math.random() * 256);
+        const b = Math.floor(Math.random() * 256);
+        e.target.style.backgroundColor = `rgb(${r}, ${g}, ${b})`;
+    }
 }

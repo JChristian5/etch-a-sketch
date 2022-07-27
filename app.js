@@ -87,6 +87,7 @@ function slideValue(newVal) {
     slideText.textContent = `${size} x ${size}`;
 }
 
+// Three different color options depending on which button is active.
 function colorChange(e) {
     if(eraseButton.value === 'active') {
         e.target.style.backgroundColor = '#F5F5F5';

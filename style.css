@@ -16,14 +16,6 @@
     border-style: solid;
 }
 
-.white {
-    background-color: #F5F5F5;
-}
-
-.black {
-    background-color: #222222;
-}
-
 .active {
     background-color: blue;
 }

@@ -1,7 +1,19 @@
+header {
+    font-family: Orbitron;
+    font-size: 36px;
+    text-align: center;
+}
+
+#slideBox {
+    margin: 0;
+    display: flex;
+    justify-content: center;
+}
+
 .container {
     background-color: #F5F5F5;
-    height: 800px;
-    width: 800px;
+    height: 700px;
+    width: 700px;
     display: grid;
     /* grid-template-columns: repeat(16, 1fr); */
     border-width: 1px;
@@ -17,9 +29,31 @@
 }
 
 .active {
-    background-color: blue;
+    background-color: #0062cc;
 }
 
 .inactive {
-    background-color: red;
+    background-color: #F5F5F5;
+    color: #222222;
+}
+
+#buttons {
+    margin: 0;
+    display: flex;
+    justify-content: center;
+}
+
+button {
+    color: #F5F5F5;
+    margin: 20px;
+    padding: 20px;
+    width: 100px;
+    border-radius: 25px;
+    border-color: #0062cc;
+    text-align: center;
+    font-family: Orbitron;
+}
+
+.slidetext {
+    text-align: center;
 }

@@ -50,21 +50,7 @@ for(let i = 0; i < startBoxes; i++) {
     cell.classList.add('cell');
     grid.appendChild(cell);
 
-    // function blackCell() {
-    //     cell.classList.add('black');
-    // }
-
-    // function whiteCell() {
-    //     cell.classList.remove('black');
-    // }
     cell.addEventListener('click', colorChange);
-    
-    // if(drawButton.value === "active" && eraseButton.value === "inactive") {
-    //     cell.addEventListener('click', blackCell);
-    // } else if(eraseButton.value === "active" && drawButton.value === "inactive") {
-    //     cell.removeEventListener('click', blackCell);
-    //     cell.addEventListener('click', whiteCell);
-    // }
     
 }
 
